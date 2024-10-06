@@ -1,0 +1,165 @@
+$date
+	Tue Sep 24 16:34:39 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module mux41_tb $end
+$var wire 1 ! y $end
+$var reg 1 " i0 $end
+$var reg 1 # i1 $end
+$var reg 1 $ i2 $end
+$var reg 1 % i3 $end
+$var reg 1 & s0 $end
+$var reg 1 ' s1 $end
+$scope module mux3 $end
+$var wire 1 " i0 $end
+$var wire 1 # i1 $end
+$var wire 1 $ i2 $end
+$var wire 1 % i3 $end
+$var wire 1 & s0 $end
+$var wire 1 ' s1 $end
+$var wire 1 ( y4 $end
+$var wire 1 ) y3 $end
+$var wire 1 * y2 $end
+$var wire 1 + y1 $end
+$var wire 1 ! y $end
+$var wire 1 , w4 $end
+$var wire 1 - w3 $end
+$var wire 1 . w2 $end
+$var wire 1 / w1 $end
+$var wire 1 0 n2 $end
+$var wire 1 1 n1 $end
+$var wire 1 2 c2 $end
+$var wire 1 3 c1 $end
+$scope module and1 $end
+$var wire 1 + y $end
+$var wire 1 0 b $end
+$var wire 1 1 a $end
+$upscope $end
+$scope module and2 $end
+$var wire 1 & b $end
+$var wire 1 * y $end
+$var wire 1 0 a $end
+$upscope $end
+$scope module and3 $end
+$var wire 1 ' b $end
+$var wire 1 ) y $end
+$var wire 1 1 a $end
+$upscope $end
+$scope module and4 $end
+$var wire 1 & a $end
+$var wire 1 ' b $end
+$var wire 1 ( y $end
+$upscope $end
+$scope module and5 $end
+$var wire 1 + a $end
+$var wire 1 " b $end
+$var wire 1 / y $end
+$upscope $end
+$scope module and6 $end
+$var wire 1 * a $end
+$var wire 1 # b $end
+$var wire 1 . y $end
+$upscope $end
+$scope module and7 $end
+$var wire 1 ) a $end
+$var wire 1 $ b $end
+$var wire 1 - y $end
+$upscope $end
+$scope module and8 $end
+$var wire 1 ( a $end
+$var wire 1 % b $end
+$var wire 1 , y $end
+$upscope $end
+$scope module not1 $end
+$var wire 1 & a $end
+$var wire 1 1 y $end
+$upscope $end
+$scope module not2 $end
+$var wire 1 ' a $end
+$var wire 1 0 y $end
+$upscope $end
+$scope module or1 $end
+$var wire 1 / a $end
+$var wire 1 . b $end
+$var wire 1 3 y $end
+$upscope $end
+$scope module or2 $end
+$var wire 1 - a $end
+$var wire 1 , b $end
+$var wire 1 2 y $end
+$upscope $end
+$scope module or3 $end
+$var wire 1 3 a $end
+$var wire 1 2 b $end
+$var wire 1 ! y $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+13
+02
+11
+10
+1/
+0.
+0-
+0,
+1+
+0*
+0)
+0(
+0'
+0&
+0%
+0$
+0#
+1"
+1!
+$end
+#10
+1!
+1.
+0+
+13
+1*
+01
+0/
+1&
+1#
+0"
+#20
+12
+1!
+1-
+03
+1)
+00
+0*
+11
+0.
+1'
+0&
+1$
+0#
+#30
+1!
+1,
+0)
+12
+1(
+01
+0-
+1&
+1%
+0$
+#40
