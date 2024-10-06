@@ -1,0 +1,63 @@
+$date
+	Sat Aug 31 16:53:41 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module complex_and_gate_tb $end
+$var wire 1 ! e $end
+$var wire 1 " y $end
+$var wire 1 # f $end
+$var reg 1 $ a $end
+$var reg 1 % b $end
+$var reg 1 & c $end
+$var reg 1 ' d $end
+$scope module U_and_gate2 $end
+$var wire 1 & a $end
+$var wire 1 ' b $end
+$var wire 1 # y $end
+$upscope $end
+$scope module U_and_gate3 $end
+$var wire 1 ! a $end
+$var wire 1 # b $end
+$var wire 1 " y $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+x'
+x&
+x%
+x$
+x#
+x"
+z!
+$end
+#5
+0"
+0#
+0'
+0&
+0%
+0$
+#10
+1'
+1%
+#15
+0'
+1&
+0%
+1$
+#20
+x"
+1#
+1'
+1%
+#25

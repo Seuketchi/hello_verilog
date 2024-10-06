@@ -1,0 +1,82 @@
+$date
+	Wed Sep  4 19:22:47 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module gate_tb $end
+$var wire 1 ! XOR $end
+$var wire 1 " XNOR $end
+$var wire 1 # OR $end
+$var wire 1 $ NOT $end
+$var wire 1 % NOR $end
+$var wire 1 & NAND $end
+$var reg 1 ' a $end
+$var reg 1 ( b $end
+$scope module U_nand_gate3 $end
+$var wire 1 ' a $end
+$var wire 1 ( b $end
+$var wire 1 & y $end
+$upscope $end
+$scope module U_nor_gate3 $end
+$var wire 1 ' a $end
+$var wire 1 ( b $end
+$var wire 1 % y $end
+$upscope $end
+$scope module U_not_gate3 $end
+$var wire 1 ' a $end
+$var wire 1 $ y $end
+$upscope $end
+$scope module U_or_gate1 $end
+$var wire 1 ' a $end
+$var wire 1 ( b $end
+$var wire 1 # y $end
+$upscope $end
+$scope module U_xnor_gate3 $end
+$var wire 1 ' a $end
+$var wire 1 ( b $end
+$var wire 1 " y $end
+$upscope $end
+$scope module U_xor_gate3 $end
+$var wire 1 ' a $end
+$var wire 1 ( b $end
+$var wire 1 ! y $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+0(
+0'
+1&
+1%
+1$
+0#
+1"
+0!
+$end
+#5
+0%
+0"
+0$
+1#
+1!
+1'
+#10
+0&
+1"
+0!
+1(
+#15
+1&
+0"
+1$
+1!
+0'
+#20
