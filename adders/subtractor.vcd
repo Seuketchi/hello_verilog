@@ -1,0 +1,127 @@
+$date
+	Wed Sep 11 17:01:49 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module full_subtractor_tb $end
+$var wire 1 ! difference $end
+$var wire 1 " borrow $end
+$var reg 1 # a $end
+$var reg 1 $ b $end
+$var reg 1 % c $end
+$scope module s1 $end
+$var wire 1 # a $end
+$var wire 1 $ b $end
+$var wire 1 % c $end
+$var wire 1 & z $end
+$var wire 1 ' y $end
+$var wire 1 ( x $end
+$var wire 1 ! difference $end
+$var wire 1 " borrow $end
+$scope module o1 $end
+$var wire 1 " y $end
+$var wire 1 & b $end
+$var wire 1 ' a $end
+$upscope $end
+$scope module s1 $end
+$var wire 1 # a $end
+$var wire 1 $ b $end
+$var wire 1 ) x $end
+$var wire 1 ( difference $end
+$var wire 1 ' borrow $end
+$scope module a1 $end
+$var wire 1 $ b $end
+$var wire 1 ' y $end
+$var wire 1 ) a $end
+$upscope $end
+$scope module n1 $end
+$var wire 1 # a $end
+$var wire 1 ) y $end
+$upscope $end
+$scope module x1 $end
+$var wire 1 # a $end
+$var wire 1 $ b $end
+$var wire 1 ( y $end
+$upscope $end
+$upscope $end
+$scope module s2 $end
+$var wire 1 ( a $end
+$var wire 1 % b $end
+$var wire 1 * x $end
+$var wire 1 ! difference $end
+$var wire 1 & borrow $end
+$scope module a1 $end
+$var wire 1 % b $end
+$var wire 1 & y $end
+$var wire 1 * a $end
+$upscope $end
+$scope module n1 $end
+$var wire 1 ( a $end
+$var wire 1 * y $end
+$upscope $end
+$scope module x1 $end
+$var wire 1 ( a $end
+$var wire 1 % b $end
+$var wire 1 ! y $end
+$upscope $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+1*
+1)
+0(
+0'
+0&
+0%
+0$
+0#
+0"
+0!
+$end
+#5
+1"
+1&
+1!
+1%
+#10
+0*
+0&
+1'
+1(
+0%
+1$
+#15
+0!
+1%
+#20
+0"
+1!
+0'
+0)
+0%
+0$
+1#
+#25
+0!
+1%
+#30
+1*
+0(
+0%
+1$
+#35
+1"
+1&
+1!
+1%
+#40
