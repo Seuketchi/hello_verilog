@@ -1,0 +1,188 @@
+$date
+	Wed Oct 23 13:45:36 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module alu_testbench $end
+$var wire 4 ! F [3:0] $end
+$var wire 1 " Cout $end
+$var reg 4 # A [3:0] $end
+$var reg 4 $ B [3:0] $end
+$var reg 1 % Cin $end
+$var reg 1 & Mode $end
+$var reg 2 ' Operation [1:0] $end
+$scope module uut $end
+$var wire 4 ( A [3:0] $end
+$var wire 4 ) B [3:0] $end
+$var wire 1 % Cin $end
+$var wire 1 " Cout $end
+$var wire 4 * F [3:0] $end
+$var wire 1 & Mode $end
+$var wire 2 + Operation [1:0] $end
+$var reg 1 , carry_out $end
+$var reg 4 - result [3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 -
+0,
+b0 +
+b0 *
+b0 )
+b0 (
+b0 '
+0&
+0%
+b0 $
+b0 #
+0"
+b0 !
+$end
+#10
+b1 '
+b1 +
+#20
+b10 '
+b10 +
+#30
+b1111 !
+b1111 *
+b1111 -
+b11 '
+b11 +
+#40
+b1010 !
+b1010 *
+b1010 -
+b101 #
+b101 (
+#50
+b0 !
+b0 *
+b0 -
+b1010 $
+b1010 )
+#60
+b0 '
+b0 +
+#70
+b1111 !
+b1111 *
+b1111 -
+b1 '
+b1 +
+#80
+b10 '
+b10 +
+#90
+b0 !
+b0 *
+b0 -
+b11 '
+b11 +
+#100
+b0 '
+b0 +
+b0 $
+b0 )
+b0 #
+b0 (
+1&
+#110
+b1 '
+b1 +
+#120
+1"
+1,
+b1111 !
+b1111 *
+b1111 -
+b10 '
+b10 +
+#130
+b11 '
+b11 +
+#140
+b1010 !
+b1010 *
+b1010 -
+b101 #
+b101 (
+#150
+0"
+0,
+b100 !
+b100 *
+b100 -
+b1010 $
+b1010 )
+#160
+b101 !
+b101 *
+b101 -
+b0 '
+b0 +
+#170
+b1111 !
+b1111 *
+b1111 -
+b1 '
+b1 +
+#180
+1"
+1,
+b1010 !
+b1010 *
+b1010 -
+b10 '
+b10 +
+#190
+0"
+0,
+b100 !
+b100 *
+b100 -
+b11 '
+b11 +
+#200
+b101 !
+b101 *
+b101 -
+1%
+#210
+b110 !
+b110 *
+b110 -
+b0 '
+b0 +
+#220
+1"
+1,
+b0 !
+b0 *
+b0 -
+b1 '
+b1 +
+#230
+b1010 !
+b1010 *
+b1010 -
+b10 '
+b10 +
+#240
+0"
+0,
+b101 !
+b101 *
+b101 -
+b11 '
+b11 +
