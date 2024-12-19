@@ -7,6 +7,8 @@ module four_bit_full_adder_subtractor_st (
     output [3:0] result,
     output cout
 );
+wire [2:0] carry;
+
 
 full_adder_subtractor_st u1 (
     .a(a[0]),
@@ -14,31 +16,31 @@ full_adder_subtractor_st u1 (
     .cin(cin),
     .control(control),
     .result(result[0]),
-    .cout(cout)
+    .cout(carry[0])
 );
 
 full_adder_subtractor_st u2 (
     .a(a[1]),
     .b(b[1]),
-    .cin(cin),
+    .cin(carry[0]),
     .control(control),
     .result(result[1]),
-    .cout(cout)
+    .cout(carry[1])
 );
 
 full_adder_subtractor_st u3 (
     .a(a[2]),
     .b(b[2]),
-    .cin(cin),
+    .cin(carry[1]),
     .control(control),
     .result(result[2]),
-    .cout(cout)
+    .cout(carry[2])
 );
 
 full_adder_subtractor_st u4 (
     .a(a[3]),
     .b(b[3]),
-    .cin(cin),
+    .cin(carry[2]),
     .control(control),
     .result(result[3]),
     .cout(cout)

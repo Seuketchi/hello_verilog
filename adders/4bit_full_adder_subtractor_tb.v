@@ -1,59 +1,84 @@
+`timescale 1ns/1ps
 `include "4bit_full_adder_subtractor_st.v"
-module four_bit_full_adder_subtractor_tb();
 
-    // Inputs
-    reg [3:0] A, B;
-    reg Cin;
-    reg Control;
+module four_bit_full_adder_subtractor_st_tb;
+    reg [3:0] a, b;
+    reg cin, control;
+    wire [3:0] result;
+    wire cout;
 
-    // Outputs
-    wire [3:0] Result;
-    wire Cout;
-
-    four_bit_full_adder_subtractor_st as1 (
-        .a(A),
-        .b(B),
-        .cin(Cin),
-        .control(Control),
-        .result(Result),
-        .cout(Cout)
+    four_bit_full_adder_subtractor_st uut (
+        .a(a), .b(b), 
+        .cin(cin), 
+        .control(control), 
+        .result(result), 
+        .cout(cout)
     );
 
-
-    // Test stimulus
+    // Initial display
     initial begin
-
-        $display("Time\t a    b    c c r    o");
-        $monitor("%g\t %b %b %b %b %b %b",
-            $time, A, B, Cin, Control, Result, Cout);
-        A = 4'b0000; B = 4'b0000; Cin = 0; Control = 0;
-        // Test 1: Add 4'b0101 (5) + 4'b0011 (3) -> Expected Result = 4'b1000 (8)
-        #10 A = 4'b0101; B = 4'b0011; Cin = 0; Control = 0;
-        
-        // Test 2: Add 4'b1111 (15) + 4'b0001 (1) with Cin = 1 -> Expected Result = 4'b0001 (carry = 1)
-        #10 A = 4'b1111; B = 4'b0001; Cin = 1; Control = 0;
-        
-        // Test 3: Subtract 4'b0110 (6) - 4'b0011 (3) -> Expected Result = 4'b0011 (3)
-        #10 A = 4'b0110; B = 4'b0011; Cin = 0; Control = 1;
-        
-        // Test 4: Subtract 4'b1000 (8) - 4'b0001 (1) with Bin = 1 -> Expected Result = 4'b0110 (6)
-        #10 A = 4'b1000; B = 4'b0001; Cin = 1; Control = 1;
-        
-        // Test 5: Add 4'b0111 (7) + 4'b0111 (7) -> Expected Result = 4'b1110 (14)
-        #10 A = 4'b0111; B = 4'b0111; Cin = 0; Control = 0;
-        
-        // Test 6: Subtract 4'b1010 (10) - 4'b0110 (6) -> Expected Result = 4'b0100 (4)
-        #10 A = 4'b1010; B = 4'b0110; Cin = 0; Control = 1;
-        
-        // Test 7: Add 4'b1001 (9) + 4'b0110 (6) -> Expected Result = 4'b1111 (15)
-        #10 A = 4'b1001; B = 4'b0110; Cin = 0; Control = 0;
-        
-        // Test 8: Subtract 4'b0100 (4) - 4'b1001 (9) -> Expected Result = Borrow out
-        #10 A = 4'b0100; B = 4'b1001; Cin = 0; Control = 1;
-        
-        // End simulation
-        #10 $finish;
-
+            $dumpfile("four.vcd");
+    $dumpvars(0, four_bit_full_adder_subtractor_st_tb);
+        $display("Time\t A      B      Cin   Control   Result   Cout");
     end
 
+    // Test variables
+    integer i, j, k, l;
+    integer pass_count = 0, fail_count = 0;
+
+    task check_result;
+        input [3:0] a_in, b_in;
+        input cin_in, control_in;
+        input [3:0] expected_result;
+        input expected_cout;
+        begin
+            #10; // Propagation delay
+
+            // Determine expected result and cout based on control signal
+            if (control_in == 0) begin // Addition mode
+                {expected_cout, expected_result} = a_in + b_in + cin_in;
+            end else begin // Subtraction mode
+                {expected_cout, expected_result} = (cin_in == 0) ? (a_in - b_in) : (a_in - b_in - 1);
+            end
+
+            // Compare the actual result and cout with expected result
+            if (result === expected_result && cout === expected_cout) begin
+                pass_count = pass_count + 1;
+            end else begin
+                fail_count = fail_count + 1;
+            end
+        end
+    endtask
+
+    initial begin
+        // Nested loops for comprehensive testing
+        for (i = 0; i < 2; i = i + 1) begin      // control
+            for (j = 0; j < 2; j = j + 1) begin  // cin
+                for (k = 0; k < 16; k = k + 1) begin // a
+                    for (l = 0; l < 16; l = l + 1) begin // b
+                        // Set inputs
+                        control = i;
+                        cin = j;
+                        a = k;
+                        b = l;
+
+                        // Display the test case result
+                        $display("%0t\t %b   %b   %b     %b       %b     %b", $time, a, b, cin, control, result, cout);
+                        
+                        // Verify result
+                        check_result(a, b, cin, control, 
+                                     (control ? (a - b - cin) : (a + b + cin)),
+                                     (control ? (a < b + cin) : (a + b + cin > 15)));
+                    end
+                end
+            end
+        end
+
+        // Final report
+        $display("\nTest Complete:");
+        $display("PASS COUNT: %0d", pass_count);
+        $display("FAIL COUNT: %0d", fail_count);
+
+        $finish;
+    end
 endmodule
